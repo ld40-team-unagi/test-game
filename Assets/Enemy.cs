@@ -11,12 +11,21 @@ public class Enemy : MonoBehaviour {
 	{
 		while (true) {
 			GetComponent<Monkey> ().Shot (transform, bullet);
-			yield return new WaitForSeconds (0.5f);
+			yield return new WaitForSeconds (1.0f);
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		GetComponent<Monkey>().Move (transform.up);
+	}
+
+	void OnTriggerEnter (Collider c)
+	{
+		if (c.tag == "PlayerBullet") {
+			ScoreCounter.Add(10);
+			Destroy (c.gameObject);
+			Destroy (gameObject);
+		}
 	}
 }

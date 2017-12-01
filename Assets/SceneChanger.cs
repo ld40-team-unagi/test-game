@@ -13,8 +13,9 @@ public class SceneChanger : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space") || Input.GetButtonDown("Action1") || Input.GetButtonDown("Jump")) //マウス左クリック、スペースキー、Aボタン、ジャンプボタンを押した場合
+		if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space") || Input.GetButtonDown("Action1") || Input.GetButtonDown("Jump"))
 		{
+			ScoreCounter.Reset();
 			SceneManager.LoadScene("MainGame");
 		}
 
