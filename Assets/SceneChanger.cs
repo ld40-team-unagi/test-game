@@ -13,7 +13,7 @@ public class SceneChanger : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space") || Input.GetButtonDown("Action1") || Input.GetButtonDown("Jump"))
+		if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space") || Input.GetButtonDown("Jump"))
 		{
 			ScoreCounter.Reset();
 			SceneManager.LoadScene("MainGame");
